@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>PiBit</title>
+    <meta name="keywords" content="Pi Network, Pitrustex, Pi token, Leen-Co Tech, Leenco, Emlyn, Pi, Pi Exchanger, Pi Exchange,">
+    <meta name="description" content="Buy and Sell Pi Token, Buy and Sell your Pi,">
+    <meta name="author" content="Umar Abdulmalik, Umar Emlyn, Leen-Co Tech Ltd">
+    <!-- style css -->
+    <!-- {{ url_for('static', filename='style.css') }} -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- bootstrap css -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- responsive-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+<!-- body -->
+<body class="main-layout">
+    {% if session %}
+        <h1>Welcome {{session.userinfo.name}}!</h1>
+        <p><a href="/logout">Logout</a></p>
+        <div><pre>{{pretty}}</pre></div>
+    {% else %}
+        <h1>Welcome Guest</h1>
+        <p><a href="/login">Login</a></p>
+    {% endif %}
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="signup.html">SignUp</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Explore</a>
+    </div>
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="head-top">
+            <div class="container-fluid">
+                <div class="row d_flex">
+                    <div class="col-sm-3">
+                        <div class="logo">
+                            <a href="index.html">Pinex<!--<img src="images/logo.png" alt="" />--></a>
+                        </div>
+                            <li>
+                                <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <table id="crypto-data">
+        <thead>
+            <tr>
+                <th>Cryptocurrency</th>
+                <th>Price</th>
+                <th>Market Cap</th>
+                <th>Volume (24h)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item["symbol"] }}</td>
+                <td>{{ item["quote"]["USD"]["price"] }}</td>
+                <td>{{ item["quote"]["USD"]["market_cap"] }}</td>
+                <td>{{ item["quote"]["USD"]["volume_24h"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

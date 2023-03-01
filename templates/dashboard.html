@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+    <!-- style css -->
+    <!-- {{ url_for('static', filename='style.css') }} -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+{% block content %}
+<!-- body -->
+
+<body class="main-layout">
+    {% if session %}
+        <h1>Welcome {{session.userinfo.name}}!</h1>
+        <p><a href="/logout">Logout</a></p>
+        <div><pre>{{pretty}}</pre></div>
+    {% else %}
+        <h1>Welcome Guest</h1>
+        <p><a href="/login">Login</a></p>
+    {% endif %}
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Explore</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="head-top">
+            <div class="container-fluid">
+                <div class="row d_flex">
+                    <div class="col-sm-3">
+                        <div class="logo">
+                            <a href="index.html"><!--<img src="images/logo.png" alt="" />-->Pinex</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <ul class="social_icon text_align_right d_none">
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="email text_align_right">
+                            <li>
+                                <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+<br>
+<br>
+                    <!-- <div class="col-sm-6">
+                        <ul class="social_icon text_align_center d_none">
+                        <p>
+                        <h3>Disclaimer:</h3>
+                        We are not an official Pi Network Exchanger, we are not in anyway related to the Pi Network Company</p>
+                        </ul>
+                    </div> -->
+<br>
+<br>
+<br>
+<br>
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">BUY</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">SELL</label>
+        <form class="login-form" action="confirmation.html" id="confirmForm" value="buy">
+			<div class="sign-in-htm">
+				<div class="group">
+                    <label for="amount" class="label">Amount of Pi Coin to Buy:</label>
+                    <input type="text" id="amount" class="input" oninput="calculateTotal()">
+				</div>
+				<div class="group">
+                <label for="currency" class="label">Select Currency:</label>
+                <select id="currency" class="input" oninput="calculateTotal()">
+                    <option value="usd">USD</option>
+                    <option value="naira">Naira</option>
+                    <option value="ustd">USTD</option>
+                </select>
+                <label for="total" class="label">Total:</label>
+                <input type="text" id="total" class="input" readonly>
+
+				<div class="group">
+                    <label for="amount" class="label">Input Your Pi Wallet Address:</label>                    
+                    <input type="text" id="userAddress" class="input" name="walletAddress">
+                </div>
+
+				</div>
+				<div class="group">
+                    <button id="clickBuy" type="submit" onclick="submitBuy()" class="button" value="BUY">
+                    BUY
+                    </button>
+				</div>
+				<div class="hr"></div>
+			</div>
+
+			<div class="sign-up-htm" value="sell">
+				<div class="group">
+                    <label for="amount" class="label">Amount of Pi Coin to Sell:</label>
+                    <input type="text" id="sellamount" class="input" oninput="calculateTotalSell()">
+
+				</div>
+				<div class="group">
+                <label for="currency" class="label">Select Currency:</label>
+                <select id="sellcurrency" class="input" oninput="calculateTotalSell()">
+                    <option value="naira">Naira</option>
+                    <option value="ustd">USTD</option>
+                </select>
+                <label for="total" class="label">Total:</label>
+                <input type="text" id="totalSell" class="input" readonly>
+
+				<div class="group">
+                    <label for="amount" class="label">Input Your Payment Details:</label>                    
+                    <input type="text" id="userAddress" class="input" name="walletAddress">
+                </div>
+
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="SELL">
+				</div>
+				<div class="hr"></div>
+				</div>
+			</div>
+		</form>
+        </div>
+	</div>
+</div>
+
+
+    <!-- footer -->
+
+    {% endblock %}
+    <div id="footer">
+        {% block footer %}
+
+        {% endblock %}
+    </body>
+</html>

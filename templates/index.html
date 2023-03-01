@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Pinex</title>
+    <meta name="keywords" content="Pi Network, Pitrustex, Pi token, Leen-Co Tech, Leenco, Emlyn, Pi, Pi Exchanger, Pi Exchange,">
+    <meta name="description" content="Buy and Sell Pi Token, Buy and Sell your Pi,">
+    <meta name="author" content="Umar Abdulmalik, Umar Emlyn, Leen-Co Tech Ltd">
+    <!-- bootstrap css -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- style css -->
+    <!-- {{ url_for('static', filename='style.css') }} -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- responsive-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<!-- body -->
+<body class="main-layout">
+    <div id="mySidepanel" class="sidepanel">
+        <strong><nav>
+            <ul class="menu">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <li><a class="active" href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('dashboard') }}"></a></li>
+              <li><a href="{{ url_for('signup') }}">Sign-Up</a></li>
+              <li><a href="{{ url_for('contact') }}">Contact</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+          </nav></strong>
+    </div>
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="head-top">
+            <div class="container-fluid">
+                <div class="row d_flex">
+                    <div class="col-sm-3">
+                        <div class="logo">
+                            <a href="index.html">Pinex<!--<img src="images/logo.png" alt="" />--></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <ul class="social_icon text_align_center d_none">
+
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="email text_align_right">
+                            <li class="d_none"></li>
+                            <li class="d_none">  </li>
+                            <li>
+                                <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- start slider section -->
+    <div id="top_section" class=" banner_main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+                                                    <figure><img class="img_responsive" src="images/top_img.png" alt="#" /></figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="bluid">
+                                                    <h1>Welcome to PiNex<br> A Place to</h1>
+                                                    <p>
+                                                    Buy and Sell Pi Coins with ease. <br> To benefit from years of mining, simply just sign-up.
+                                                    </p>
+                                                    <a class="read_more" href="signup.html">Sign-Up Now </a><a class="read_more" href="#contact.html">Contact Us </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+                                                    <figure><img class="img_responsive" src="images/top_img.png" alt="#" /></figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="bluid">
+                                                    <h1>BUY and SELL<br> Your Pi Network with ease</h1>
+                                                    <p>
+                                                    We offer pioneers the ability to buy and sell their Pi tokens securely and quickly and with ease. To benefit from years of mining, simply just sign-up.
+                                                    </p>
+                                                    <a class="read_more" href="signup.html">Sign-Up Now </a><a class="read_more" href="#contact.html">Contact Us </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+                                                    <figure><img class="img_responsive" src="images/top_img.png" alt="#" /></figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="bluid">
+                                                    <h1>Explore <br> more about Pi Network</h1>
+                                                    <p>Helping Pioneers to explore the potential of Pi and its applications. <br>
+                                                    We offer pioneers the ability to buy and sell their Pi tokens securely and quickly and with ease. To benefit from years of mining, simply just sign-up.
+                                                    </p>
+                                                    <a class="read_more" href="signup.html">Sign-Up Now </a><a class="read_more" href="#contact.html">Contact Us </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+                                                    <figure><img class="img_responsive" src="images/top_img.png" alt="#" /></figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="bluid">
+                                                    <h1>Explore <br> more about Pi Network</h1>
+                                                    <p>To benefit from years of mining, <br> Simply just sign-up Now!.
+                                                    Helping Pioneers to explore the potential of Pi and its applications.
+                                                    </p>
+                                                    <a class="read_more" href="signup.html">Sign-Up Now </a><a class="read_more" href="#contact.html">Contact Us </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end slider section -->
+    <!-- Get Started--> 
+    <br><br>
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about_border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="titlepage text_align_left">
+                                    <h2>Here in Pinex</h2>
+                                </div>
+                                <div class="about_text">
+                                    <p>Benefit from years of mining! <br> 
+                                        Offering pioneers the ability to buy and sell their Pi tokens securely and quickly and with ease
+                                        simply click the button below
+                                         <br>
+                                    </p>
+                                    <a class="read_more" href="signup.html">Get Started </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- end Getting Started -->
+    <!-- about -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about_border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="titlepage text_align_left">
+                                    <h2>About Us</h2>
+                                </div>
+                                <div class="about_text">
+                                    <p>We are a trusted platform that give pioneers the opputunity to benefit from their mining. <br>
+                                    We offer pioneers the ability to buy and sell their Pi Coins securely and quickly with ease. </p>
+                                    <a class="read_more" href="about.html">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about_img">
+                                    <figure><img class="img_responsive" src="images/about2.png" alt="#" /></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+    <!-- graf -->
+    <div class="graf">
+        <div class="container">
+            <div class="row">
+                <table id="crypto-data">
+                    <thead>
+                        <tr>
+                            <th>Cryptocurrency</th>
+                            <th>Price</th>
+                            <th>Market Cap</th>
+                            <th>Volume (24h)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in data %}
+                        <tr>
+                            <td>{{ item["symbol"] }}</td>
+                            <td>{{ item["quote"]["USD"]["price"] }}</td>
+                            <td>{{ item["quote"]["USD"]["market_cap"] }}</td>
+                            <td>{{ item["quote"]["USD"]["volume_24h"] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- end graf -->
+    <!-- works -->
+    <div class="works">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage text_align_center">
+                        <h2>How It Works</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="works_vedio">
+                        <figure><img class="img_responsive" src="images/work.png" alt="#"></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- works -->
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="logo">
+                        <a class="logo_bottom" href="index.html"><!--<img src="images/logo.png" alt="" />-->Pinex</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" ">
+                  <div class="Informa conta ">
+                     <h3>Contact Us</h3>
+                     <ul>
+                        <li> <a href="Javascript:void(0) ">
+                        </li>
+                        <li> <a href="Javascript:void(0) "><i class="fa fa-phone " aria-hidden="true "></i> Call +01 1234567890
+                           </a>
+                        </li>
+                        <li> <a href="Javascript:void(0) "> <i class="fa fa-envelope " aria-hidden="true "></i> Support@Pitrustex.com
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+
+               </div>
+               <div class="col-md-3 col-sm-6 "">
+                        <div class="Informa helpful">
+                            <h3>Useful Link</h3>
+                            <ul>
+                                <li>About Us
+                                </li>
+                                <li>Services
+                                </li>
+                                <li>Explore
+                                </li>
+                                <li>Blog
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            
+               <div class="col-md-3 col-sm-6 ">
+                  <div class="Informa ">
+                     <h3>Newsletter</h3>
+                     <form class="newslatter_form ">
+                        <input class="ente " placeholder="Enter your email " type="text " name="Enter your email ">
+                        <button class="subs_btn ">Subscribe</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright text_align_center ">
+               <div class="container ">
+                  <div class="row ">
+                     <div class="col-md-12 ">
+                        <p>© <a href="https://Leecotech.com/ "> Pinex</a> 2023</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js "></script>
+      <script src="js/bootstrap.bundle.min.js "></script>
+      <script src="js/jquery-3.0.0.min.js "></script>
+      <script src="js/custom.js "></script>
+   </body>
+</html>
