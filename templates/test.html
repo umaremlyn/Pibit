@@ -1,6 +1,87 @@
-{% extends "base.html" %}
-{% block title %}Home Page{% endblock %}
-{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Pinex</title>
+    <meta name="keywords" content="Pi Network, Pitrustex, Pi token, Leen-Co Tech, Leenco, Emlyn, Pi, Pi Exchanger, Pi Exchange,">
+    <meta name="description" content="Buy and Sell Pi Token, Buy and Sell your Pi,">
+    <meta name="author" content="Umar Abdulmalik, Umar Emlyn, Leen-Co Tech Ltd">
+    <!-- bootstrap css -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- style css -->
+    <!-- {{ url_for('static', filename='style.css') }} -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- responsive-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<!-- body -->
+<body class="main-layout">
+    <div id="mySidepanel" class="sidepanel">
+        <strong><nav>
+            <ul class="menu">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <li><a class="active" href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('dashboard') }}"></a></li>
+              <li><a href="{{ url_for('signup') }}">Sign-Up</a></li>
+              <li><a href="{{ url_for('contact') }}">Contact</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+          </nav></strong>
+    </div>
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="head-top">
+            <div class="container-fluid">
+                <div class="row d_flex">
+                    <div class="col-sm-3">
+                        <div class="logo">
+                            <a href="index.html">Pinex<!--<img src="images/logo.png" alt="" />--></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <ul class="social_icon text_align_center d_none">
+
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="email text_align_right">
+                            <li class="d_none"></li>
+                            <li class="d_none">  </li>
+                            <li>
+                                <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
     <!-- start slider section -->
     <div id="top_section" class=" banner_main">
         <div class="container-fluid">
@@ -19,7 +100,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src ="url_for('static', filename='images/top_img.png')" alt="#" /></figure>
+                                                    <figure><img class="img_responsive" src="images/top_img.png" alt="#" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -28,6 +109,7 @@
                                                     <p>
                                                     Buy and Sell Pi Coins with ease. <br> To benefit from years of mining, simply just sign-up.
                                                     </p>
+                                                    <a class="read_more" href="signup.html">Sign-Up Now </a><a class="read_more" href="#contact.html">Contact Us </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -49,6 +131,7 @@
                                                     <p>
                                                     We offer pioneers the ability to buy and sell their Pi tokens securely and quickly and with ease. To benefit from years of mining, simply just sign-up.
                                                     </p>
+                                                    <a class="read_more" href="signup.html">Sign-Up Now </a><a class="read_more" href="#contact.html">Contact Us </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -70,6 +153,7 @@
                                                     <p>Helping Pioneers to explore the potential of Pi and its applications. <br>
                                                     We offer pioneers the ability to buy and sell their Pi tokens securely and quickly and with ease. To benefit from years of mining, simply just sign-up.
                                                     </p>
+                                                    <a class="read_more" href="signup.html">Sign-Up Now </a><a class="read_more" href="#contact.html">Contact Us </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -91,6 +175,7 @@
                                                     <p>To benefit from years of mining, <br> Simply just sign-up Now!.
                                                     Helping Pioneers to explore the potential of Pi and its applications.
                                                     </p>
+                                                    <a class="read_more" href="signup.html">Sign-Up Now </a><a class="read_more" href="#contact.html">Contact Us </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -130,7 +215,7 @@
                                         simply click the button below
                                          <br>
                                     </p>
-                                    <a class="read_more" href="{{ url_for('signup') }}">Get Started </a>                                
+                                    <a class="read_more" href="signup.html">Get Started </a>
                                 </div>
                             </div>
                         </div>
@@ -140,13 +225,37 @@
         </div>
     </div> 
     <!-- end Getting Started -->
-<h1> Market Updates</h1>
-    <div class="coinmarketcap-currency-widget" data-currencyid="1" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-    <div class="coinmarketcap-currency-widget" data-currencyid="1027" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-    <div class="coinmarketcap-currency-widget" data-currencyid="825" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>    
-    <div class="coinmarketcap-currency-widget" data-currencyid="1839" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+    <!-- about -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about_border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="titlepage text_align_left">
+                                    <h2>About Us</h2>
+                                </div>
+                                <div class="about_text">
+                                    <p>We are a trusted platform that give pioneers the opputunity to benefit from their mining. <br>
+                                    We offer pioneers the ability to buy and sell their Pi Coins securely and quickly with ease. </p>
+                                    <a class="read_more" href="about.html">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about_img">
+                                    <figure><img class="img_responsive" src="images/about2.png" alt="#" /></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
     <!-- graf -->
-    <!-- <div class="graf">
+    <div class="graf">
         <div class="container">
             <div class="row">
                 <table id="crypto-data">
@@ -171,7 +280,7 @@
                 </table>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- end graf -->
     <!-- works -->
     <div class="works">
@@ -193,9 +302,75 @@
         </div>
     </div>  
     <!-- works -->
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="logo">
+                        <a class="logo_bottom" href="index.html"><!--<img src="images/logo.png" alt="" />-->Pinex</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" ">
+                  <div class="Informa conta ">
+                     <h3>Contact Us</h3>
+                     <ul>
+                        <li> <a href="Javascript:void(0) ">
+                        </li>
+                        <li> <a href="Javascript:void(0) "><i class="fa fa-phone " aria-hidden="true "></i> Call +01 1234567890
+                           </a>
+                        </li>
+                        <li> <a href="Javascript:void(0) "> <i class="fa fa-envelope " aria-hidden="true "></i> Support@Pitrustex.com
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
 
-    {% endblock %}
-    <div id="footer">
-        {% block footer %}
-
-        {% endblock %}
+               </div>
+               <div class="col-md-3 col-sm-6 "">
+                        <div class="Informa helpful">
+                            <h3>Useful Link</h3>
+                            <ul>
+                                <li>About Us
+                                </li>
+                                <li>Services
+                                </li>
+                                <li>Explore
+                                </li>
+                                <li>Blog
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            
+               <div class="col-md-3 col-sm-6 ">
+                  <div class="Informa ">
+                     <h3>Newsletter</h3>
+                     <form class="newslatter_form ">
+                        <input class="ente " placeholder="Enter your email " type="text " name="Enter your email ">
+                        <button class="subs_btn ">Subscribe</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright text_align_center ">
+               <div class="container ">
+                  <div class="row ">
+                     <div class="col-md-12 ">
+                        <p>© <a href="https://Leecotech.com/ "> Pinex</a> 2023</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js "></script>
+      <script src="js/bootstrap.bundle.min.js "></script>
+      <script src="js/jquery-3.0.0.min.js "></script>
+      <script src="js/custom.js "></script>
+   </body>
+</html>

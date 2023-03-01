@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("test.html")
+    return render_template("index.html")
 
 # Define a route for the sign up page
 # @app.route('/signup', methods=['GET', 'POST'])
